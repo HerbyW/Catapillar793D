@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!--
+    ################################################################################################
+    modified or copyright by Herbert Wagner 01/2016 for cat793D heavy off highway truck (Flightgear)
+    ################################################################################################
+-->
+
+<PropertyList>
+
+  <path>control-unit5b.ac</path>
+
+  <animation>
+    <type>material</type>
+    <object-name>S1on</object-name>
+    <object-name>S2on</object-name>
+    <object-name>S3on</object-name>
+    <object-name>S4on</object-name>
+    <object-name>S5on</object-name>
+    <object-name>S6on</object-name>
+    <object-name>S7on</object-name>
+    <object-name>S8on</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.5 </red>
+      <green> 0.5 </green>
+      <blue>  0.5 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>S1on</object-name>
+    <object-name>S2on</object-name>
+    <object-name>S3on</object-name>
+    <object-name>S4on</object-name>
+    <object-name>S5on</object-name>
+    <object-name>S6on</object-name>
+    <object-name>S7on</object-name>
+    <object-name>S8on</object-name>
+  </animation>
+  
+
+
+</PropertyList>

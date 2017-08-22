@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!--
+    ################################################################################################
+    modified or copyright by Herbert Wagner 01/2016 for cat793D heavy off highway truck (Flightgear)
+    ################################################################################################
+-->
+<PropertyList>
+  <particlesystem>
+    <name>drifting-smoke-sand</name>
+    
+    <texture>sand.png</texture>
+    
+    <condition>
+      <and>
+	<property>sim/multiplay/generic/int[10]</property>    
+	<greater-than>
+	  <property>sim/multiplay/generic/float[7]</property>
+	  <value>1</value>
+	</greater-than>
+	<less-than>
+	  <property>sim/multiplay/generic/float[7]</property>
+	  <value>268000</value>
+	</less-than>
+	<greater-than>
+	  <property>sim/multiplay/generic/float[7]</property>
+	  <value>50000</value>
+	</greater-than>
+      </and>
+    </condition>
+    
+    <emissive>false</emissive>
+    <lighting>false</lighting>
+    <align>billboard</align>
+    <attach>world</attach>
+    <placer>
+      <type>point</type>
+    </placer>
+    <shooter>
+      <theta-min-deg>60</theta-min-deg>
+      <theta-max-deg>120</theta-max-deg>
+      <phi-min-deg>-30</phi-min-deg>
+      <phi-max-deg> 30</phi-max-deg>
+      <speed-mps>
+	<value>11</value>
+	<spread>3.5</spread>
+      </speed-mps>
+      <rotation-speed>
+	<x-min-deg-sec>0</x-min-deg-sec>
+	<y-min-deg-sec>0</y-min-deg-sec>
+	<z-min-deg-sec>0</z-min-deg-sec>
+	<x-max-deg-sec>15</x-max-deg-sec>
+	<y-max-deg-sec>15</y-max-deg-sec>
+	<z-max-deg-sec>15</z-max-deg-sec>
+      </rotation-speed>
+    </shooter>
+    <counter>
+      <particles-per-sec>
+	<value>12</value>
+	<spread>10</spread>
+      </particles-per-sec>
+    </counter>
+    <particle>
+      <start>
+	<color>
+	  <red><value>0.9870</value></red>
+	  <green><value>0.9870</value></green>
+	  <blue><value>0.9870</value></blue>
+	  <alpha><value>0.27</value></alpha>
+	</color>
+	<size>
+	  <value>0.01</value>
+	</size>
+      </start>
+      <end>
+	<color>
+	  <red><value>0.97</value></red>
+	  <green><value>0.97</value></green>
+	  <blue><value>0.97</value></blue>
+	  <alpha><value>0.03</value></alpha>
+	</color>
+	<size>
+	  <value>12.0</value>
+	</size>
+      </end>
+      <life-sec>
+	<value>17</value>
+      </life-sec>
+      <mass-kg>0.35</mass-kg>
+      <radius-m>0.40</radius-m>
+    </particle>
+    <program>
+      <fluid>air</fluid>
+      <gravity>true</gravity>
+      <wind>true</wind>
+    </program>
+  </particlesystem>
+</PropertyList>

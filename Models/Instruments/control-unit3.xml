@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!--
+    ################################################################################################
+    modified or copyright by Herbert Wagner 01/2016 for cat793D heavy off highway truck (Flightgear)
+    ################################################################################################
+-->
+
+<PropertyList>
+
+  <path>control-unit3b.ac</path>
+
+  
+
+  <animation>
+    <type>material</type>
+    
+    <object-name>S2on</object-name>
+    <object-name>S3on</object-name>
+    <object-name>S4on</object-name>
+    <object-name>S5on</object-name>
+    <object-name>S6on</object-name>
+    
+    <object-name>S8on</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.5 </red>
+      <green> 0.5 </green>
+      <blue>  0.5 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    
+    <object-name>S2on</object-name>
+    <object-name>S3on</object-name>
+    <object-name>S4on</object-name>
+    <object-name>S5on</object-name>
+    <object-name>S6on</object-name>
+    
+    <object-name>S8on</object-name>
+  </animation>
+
+  <!--TXDRIVE activ 1 -->
+  
+  <animation>
+    <type>material</type>
+    <object-name>S1out</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.05 </red>
+      <green> 0.05 </green>
+      <blue>  0.05 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>S1out</object-name>
+    <condition>
+    <not-equals>
+     <property>controls/switches/TXDRIVE</property>
+     <value>1</value>
+    </not-equals>
+   </condition> 
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>S1on</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   1.0 </red>
+      <green> 1.0 </green>
+      <blue>  1.0 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>S1on</object-name>
+    <condition>
+    <equals>
+     <property>controls/switches/TXDRIVE</property>
+     <value>1</value>
+    </equals>
+   </condition> 
+  </animation>
+  
+  <!--reverse activ 7 -->
+  
+  <animation>
+    <type>material</type>
+    <object-name>S7out</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.05 </red>
+      <green> 0.05 </green>
+      <blue>  0.05 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>S7out</object-name>
+    <condition>
+    <not-equals>
+     <property>controls/engines/engine/direction</property>
+     <value>-1</value>
+    </not-equals>
+   </condition> 
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>S7on</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   1.0 </red>
+      <green> 1.0 </green>
+      <blue>  1.0 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>S7on</object-name>
+    <condition>
+    <equals>
+     <property>controls/engines/engine/direction</property>
+     <value>-1</value>
+    </equals>
+   </condition> 
+  </animation>
+  
+</PropertyList>

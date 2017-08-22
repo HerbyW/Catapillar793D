@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+################################################################################################
+modified or copyright by Herbert Wagner 01/2016 for cat793D heavy off highway truck (Flightgear)
+################################################################################################
+-->
+
+<PropertyList>
+  
+  <path>control-unit2b.ac</path>
+  
+  <!--loader open 1 -->
+  
+  <animation>
+    <type>material</type>
+    <object-name>S1out</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.05 </red>
+      <green> 0.05 </green>
+      <blue>  0.05 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>S1out</object-name>
+    <condition>
+      <not-equals>
+	<property>sim/model/door-positions/frontleft/position-norm</property>
+	<value>1</value>
+      </not-equals>
+    </condition> 
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>S1on</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   1.0 </red>
+      <green> 1.0 </green>
+      <blue>  1.0 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>S1on</object-name>
+    <condition>
+      <equals>
+	<property>sim/model/door-positions/frontleft/position-norm</property>
+	<value>1</value>
+      </equals>
+    </condition> 
+  </animation>
+  
+  <!--loader moving 2 -->
+  
+  <animation>
+    <type>material</type>
+    <object-name>S2out</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.05 </red>
+      <green> 0.05 </green>
+      <blue>  0.05 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>S2out</object-name>
+    <condition>
+      <or>
+	<equals>
+	  <property>sim/model/door-positions/frontleft/position-norm</property>
+	  <value>1</value>
+	</equals>
+	<equals>
+	  <property>sim/model/door-positions/frontleft/position-norm</property>
+	  <value>0</value>
+	</equals>
+	<not-equals>
+	  <property>fdm/jsbsim/inertia/pointmass-weight-lbs[0]</property>
+	  <value>0</value>
+	</not-equals>
+	<not-equals>
+	  <property>controls/storage/load-signal</property>
+	  <value>0</value>
+	</not-equals>
+      </or>
+    </condition> 
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>S2on</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   1.0 </red>
+      <green> 1.0 </green>
+      <blue>  1.0 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>S2on</object-name>
+    <condition>
+      <and>
+	<not-equals>
+	  <property>sim/model/door-positions/frontleft/position-norm</property>
+	  <value>1</value>
+	</not-equals>
+	<not-equals>
+	  <property>sim/model/door-positions/frontleft/position-norm</property>
+	  <value>0</value>
+	</not-equals>
+	<equals>
+	  <property>fdm/jsbsim/inertia/pointmass-weight-lbs[0]</property>
+	  <value>0</value>
+	</equals>
+	<not-equals>
+	  <property>controls/storage/load-signal</property>
+	  <value>1</value>
+	</not-equals>
+      </and>
+    </condition>  
+  </animation>
+  
+  <!--loader closed 3 -->
+  
+  <animation>
+    <type>material</type>
+    <object-name>S3out</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.05 </red>
+      <green> 0.05 </green>
+      <blue>  0.05 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>S3out</object-name>
+    <condition>
+      <or>
+	<not-equals>
+	  <property>sim/model/door-positions/frontleft/position-norm</property>
+	  <value>0</value>
+	</not-equals>
+	<not-equals>
+	  <property>fdm/jsbsim/inertia/pointmass-weight-lbs[0]</property>
+	  <value>0</value>
+	</not-equals>
+      </or>
+    </condition> 
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>S3on</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   1.0 </red>
+      <green> 1.0 </green>
+      <blue>  1.0 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>S3on</object-name>
+    <condition>
+      <and>
+	<equals>
+	  <property>sim/model/door-positions/frontleft/position-norm</property>
+	  <value>0</value>
+	</equals>
+	<equals>
+	  <property>fdm/jsbsim/inertia/pointmass-weight-lbs[0]</property>
+	  <value>0</value>
+	</equals>
+      </and>
+    </condition> 
+  </animation>
+  
+  <!--loader loading 4 -->
+  
+  <animation>
+    <type>material</type>
+    <object-name>S4out</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.05 </red>
+      <green> 0.05 </green>
+      <blue>  0.05 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>S4out</object-name>
+    <condition>
+      <or>
+	<not-equals>
+	  <property>sim/model/door-positions/frontleft/position-norm</property>
+	  <value>0</value>
+	</not-equals>
+	<equals>
+	  <property>fdm/jsbsim/inertia/pointmass-weight-lbs[0]</property>
+	  <value>0</value>
+	</equals>
+	<equals>
+	  <property>fdm/jsbsim/inertia/pointmass-weight-lbs[0]</property>
+	  <value>480607</value>
+	</equals>
+      </or>
+    </condition> 
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>S4on</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   1.0 </red>
+      <green> 1.0 </green>
+      <blue>  1.0 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>S4on</object-name>
+    <condition>
+      <and>
+	<equals>
+	  <property>sim/model/door-positions/frontleft/position-norm</property>
+	  <value>0</value>
+	</equals>
+	<not-equals>
+	  <property>fdm/jsbsim/inertia/pointmass-weight-lbs[0]</property>
+	  <value>0</value>
+	</not-equals>
+	<less-than>
+	  <property>fdm/jsbsim/inertia/pointmass-weight-lbs[0]</property>
+	  <value>480606</value>
+	</less-than>
+      </and>
+    </condition> 
+  </animation>
+  
+  <!--loader unloading 5 -->
+  
+  <animation>
+    <type>material</type>
+    <object-name>S5out</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.05 </red>
+      <green> 0.05 </green>
+      <blue>  0.05 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>S5out</object-name>
+    <condition>
+      <or>
+	<equals>
+	  <property>sim/model/door-positions/frontleft/position-norm</property>
+	  <value>0</value>
+	</equals>
+	<equals>
+	  <property>fdm/jsbsim/inertia/pointmass-weight-lbs[0]</property>
+	  <value>0</value>
+	</equals>
+      </or>
+    </condition>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>S5on</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   1.0 </red>
+      <green> 1.0 </green>
+      <blue>  1.0 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>S5on</object-name>
+    <condition>
+      <and>
+	<not-equals>
+	  <property>sim/model/door-positions/frontleft/position-norm</property>
+	  <value>0</value>
+	</not-equals>
+	<greater-than>
+	  <property>fdm/jsbsim/inertia/pointmass-weight-lbs[0]</property>
+	  <value>0</value>
+	</greater-than>
+      </and>
+    </condition>
+  </animation>
+  
+  <!--loader empty and closing 6 -->
+  
+  <animation>
+    <type>material</type>
+    <object-name>S6out</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.05 </red>
+      <green> 0.05 </green>
+      <blue>  0.05 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>S6out</object-name>
+    <condition>
+      <or>
+	<equals>
+	  <property>sim/model/door-positions/frontleft/position-norm</property>
+	  <value>1</value>
+	</equals>
+	<equals>
+	  <property>sim/model/door-positions/frontleft/position-norm</property>
+	  <value>0</value>
+	</equals>
+	<not-equals>
+	  <property>fdm/jsbsim/inertia/pointmass-weight-lbs[0]</property>
+	  <value>0</value>
+	</not-equals>
+	<not-equals>
+	  <property>controls/storage/load-signal</property>
+	  <value>1</value>
+	</not-equals>
+      </or>
+    </condition> 
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>S6on</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   1.0 </red>
+      <green> 1.0 </green>
+      <blue>  1.0 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>S6on</object-name>
+    <condition>
+      <and>
+	<not-equals>
+	  <property>sim/model/door-positions/frontleft/position-norm</property>
+	  <value>1</value>
+	</not-equals>
+	<not-equals>
+	  <property>sim/model/door-positions/frontleft/position-norm</property>
+	  <value>0</value>
+	</not-equals>
+	<equals>
+	  <property>fdm/jsbsim/inertia/pointmass-weight-lbs[0]</property>
+	  <value>0</value>
+	</equals>
+	<equals>
+	  <property>controls/storage/load-signal</property>
+	  <value>1</value>
+	</equals>
+      </and>
+    </condition>  
+  </animation>
+  
+  <!--loader loaded and closed 7 -->
+  
+  <animation>
+    <type>material</type>
+    <object-name>S7out</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.05 </red>
+      <green> 0.05 </green>
+      <blue>  0.05 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>S7out</object-name>
+    <condition>
+      <or>
+	<not-equals>
+	  <property>sim/model/door-positions/frontleft/position-norm</property>
+	  <value>0</value>
+	</not-equals>
+	<not-equals>
+	  <property>fdm/jsbsim/inertia/pointmass-weight-lbs[0]</property>
+	  <value>480607</value>
+	</not-equals>
+      </or>
+    </condition> 
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>S7on</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   1.0 </red>
+      <green> 1.0 </green>
+      <blue>  1.0 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>S7on</object-name>
+    <condition>
+      <and>
+	<equals>
+	  <property>sim/model/door-positions/frontleft/position-norm</property>
+	  <value>0</value>
+	</equals>
+	<equals>
+	  <property>fdm/jsbsim/inertia/pointmass-weight-lbs[0]</property>
+	  <value>480607</value>
+	</equals>
+      </and>
+    </condition> 
+  </animation>
+  
+  </PropertyList>
+  

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!--
+    ################################################################################################
+    modified or copyright by Herbert Wagner 01/2016 for cat793D heavy off highway truck (Flightgear)
+    ################################################################################################
+-->
+
+<PropertyList>
+
+  <path>control-unit8b.ac</path>
+
+  
+
+  <animation>
+    <type>material</type>
+    <object-name>S1on</object-name>
+    <object-name>S2on</object-name>
+    <object-name>S3on</object-name>
+    <object-name>S4on</object-name>
+    
+    <object-name>S6on</object-name>
+    <object-name>S7on</object-name>
+    <object-name>S8on</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.5 </red>
+      <green> 0.5 </green>
+      <blue>  0.5 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>S1on</object-name>
+    <object-name>S2on</object-name>
+    <object-name>S3on</object-name>
+    <object-name>S4on</object-name>
+    
+    <object-name>S6on</object-name>
+    <object-name>S7on</object-name>
+    <object-name>S8on</object-name>
+  </animation>
+  
+  <!--battery 5 -->
+  
+  <animation>
+    <type>material</type>
+    <object-name>S5out</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.05 </red>
+      <green> 0.05 </green>
+      <blue>  0.05 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>S5out</object-name>
+    <condition>
+    <greater-than>
+     <property>consumables/fuel/total-fuel-kg</property>
+     <value>460</value>
+    </greater-than>
+   </condition> 
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>S5on</object-name>
+    <emission>
+      <red>   1.0 </red>
+      <green> 1.0 </green>
+      <blue>  1.0 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>S5on</object-name>
+    <condition>
+    <less-than>
+     <property>consumables/fuel/total-fuel-kg</property>
+     <value>460</value>
+    </less-than>
+   </condition> 
+  </animation>
+
+</PropertyList>

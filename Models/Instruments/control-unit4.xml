@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!--
+    ################################################################################################
+    modified or copyright by Herbert Wagner 01/2016 for cat793D heavy off highway truck (Flightgear)
+    ################################################################################################
+-->
+
+<PropertyList>
+
+  <path>control-unit4b.ac</path>
+
+  
+
+  <animation>
+    <type>material</type>
+    <object-name>S1on</object-name>
+    
+    
+    <object-name>S6on</object-name>
+    
+    <object-name>S8on</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.5 </red>
+      <green> 0.5 </green>
+      <blue>  0.5 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>S1on</object-name>
+    
+    
+    <object-name>S6on</object-name>
+    
+    <object-name>S8on</object-name>
+  </animation>
+  
+  <!--Engine LiqCoolerTemp 2 -->
+  
+  <animation>
+    <type>material</type>
+    <object-name>S2out</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.05 </red>
+      <green> 0.05 </green>
+      <blue>  0.05 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>S2out</object-name>
+    <condition>
+    <greater-than>
+     <property>/controls/liqcooltemp</property>
+     <value>79.999</value>
+    </greater-than>
+   </condition> 
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>S2on</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   1.0 </red>
+      <green> 1.0 </green>
+      <blue>  1.0 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>S2on</object-name>
+    <condition>
+    <less-than>
+     <property>/controls/liqcooltemp</property>
+     <value>79.999</value>
+    </less-than>
+   </condition> 
+  </animation>
+  
+  <!--Engine OelPress 3 -->
+  
+  <animation>
+    <type>material</type>
+    <object-name>S3out</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.05 </red>
+      <green> 0.05 </green>
+      <blue>  0.05 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>S3out</object-name>
+    <condition>
+    <equals>
+     <property>/controls/oelpress</property>
+     <value>120</value>
+    </equals>
+   </condition> 
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>S3on</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   1.0 </red>
+      <green> 1.0 </green>
+      <blue>  1.0 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>S3on</object-name>
+    <condition>
+    <not-equals>
+     <property>/controls/oelpress</property>
+     <value>120</value>
+    </not-equals>
+   </condition> 
+  </animation>
+  
+  <!--LiqCoolerPress 4 -->
+  
+  <animation>
+    <type>material</type>
+    <object-name>S4out</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.05 </red>
+      <green> 0.05 </green>
+      <blue>  0.05 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>S4out</object-name>
+    <condition>
+    <equals>
+     <property>controls/liqcoolpress</property>
+     <value>150</value>
+    </equals>
+   </condition> 
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>S4on</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   1.0 </red>
+      <green> 1.0 </green>
+      <blue>  1.0 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>S4on</object-name>
+    <condition>
+    <not-equals>
+     <property>controls/liqcoolpress</property>
+     <value>150</value>
+    </not-equals>
+   </condition> 
+  </animation>
+  
+  <!--Engine Electric 5 -->
+  
+  <animation>
+    <type>material</type>
+    <object-name>S5out</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.05 </red>
+      <green> 0.05 </green>
+      <blue>  0.05 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>S5out</object-name>
+    <condition>
+    <equals>
+     <property>/controls/engineelectric</property>
+     <value>0</value>
+    </equals>
+   </condition> 
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>S5on</object-name>
+    <emission>
+      <red>   1.0 </red>
+      <green> 1.0 </green>
+      <blue>  1.0 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>S5on</object-name>
+    <condition>
+    <not-equals>
+     <property>/controls/engineelectric</property>
+     <value>0</value>
+    </not-equals>
+   </condition> 
+  </animation>
+  
+  <!--Engine wait for whatever 7 -->
+  
+  <animation>
+    <type>material</type>
+    <object-name>S7out</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.05 </red>
+      <green> 0.05 </green>
+      <blue>  0.05 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>S7out</object-name>
+    <condition>
+	<equals>
+	  <property>controls/enginewhatever</property>
+	  <value>0</value>
+	</equals>
+    </condition> 
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>S7on</object-name>
+    <emission>
+      <red>   1.0 </red>
+      <green> 1.0 </green>
+      <blue>  1.0 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>S7on</object-name>
+    <condition>
+	<not-equals>
+	  <property>controls/enginewhatever</property>
+	  <value>0</value>
+	</not-equals>
+    </condition> 
+  </animation>
+
+</PropertyList>

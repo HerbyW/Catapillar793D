@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!--
+    ################################################################################################
+    modified or copyright by Herbert Wagner 01/2016 for cat793D heavy off highway truck (Flightgear)
+    ################################################################################################
+-->
+<PropertyList>
+  <fx>
+    
+    <engines>
+      <name>engine starting</name>
+      <mode>looped</mode>
+      <path>Aircraft/cat793D/Sounds/cat-starting.wav</path>
+      <condition>
+	<not-equals>
+	  <property>sim/multiplay/generic/int[7]</property>
+	  <value>0</value>
+	</not-equals>
+      </condition>
+      <volume>
+	<min>0.1</min>
+	<max>0.7</max>
+	<offset>0.7</offset>
+      </volume>
+    </engines>
+    
+    <enginer>
+      <name>engine running</name>
+      <mode>looped</mode>
+      <path>Aircraft/cat793D/Sounds/cat-running.wav</path>
+      <condition>
+	<and>
+	<less-than>
+	  <property>sim/multiplay/generic/float[10]</property>
+	  <value>1.5</value>
+	</less-than>  
+	<equals>
+	  <property>sim/multiplay/generic/float[1]</property>
+	  <value>0</value>
+	</equals>
+	<equals>
+	  <property>sim/multiplay/generic/int[6]</property>
+	  <value>1</value>
+	</equals>
+	</and>
+      </condition>
+      <volume>
+	<property>sim/multiplay/generic/float[12]</property>
+	<factor>0.048</factor>
+	<min>0.4</min>
+	<max>1.0</max>
+	<offset>0</offset>
+      </volume>
+      <pitch>
+	<property>sim/multiplay/generic/float[12]</property>
+	<factor>0.012</factor>
+	<min>0.0</min>
+	<max>0.5</max>
+      </pitch>
+    </enginer>
+    
+    <enginel>
+      <name>engine low speed</name>
+      <mode>looped</mode>
+      <path>Aircraft/cat793D/Sounds/cat-speed.wav</path>
+      <condition>
+	<and>
+	  <less-than>
+	  <property>sim/multiplay/generic/float[10]</property>
+	  <value>20.001</value>
+	</less-than>
+	<not-equals>
+	  <property>sim/multiplay/generic/float[1]</property>
+	  <value>0</value>
+	</not-equals>
+	<equals>
+	  <property>sim/multiplay/generic/int[6]</property>
+	  <value>1</value>
+	</equals>
+	</and>
+      </condition>
+      <volume>
+	<property>sim/multiplay/generic/float[12]</property>
+	<factor>0.048</factor>
+	<min>0.3</min>
+	<max>1.0</max>
+	<offset>0.10</offset>
+      </volume>
+      <pitch>
+	<property>sim/multiplay/generic/float[12]</property>
+	<factor>0.012</factor>
+	<min>0.0</min>
+	<max>0.5</max>
+      </pitch>
+    </enginel>
+    
+    <engineh>
+      <name>engine high speed</name>
+      <mode>looped</mode>
+      <path>Aircraft/cat793D/Sounds/cat-speed2.wav</path>
+      <condition>
+	<and>
+	  <greater-than>
+	  <property>sim/multiplay/generic/float[10]</property>
+	  <value>20</value>
+	</greater-than>
+	<not-equals>
+	  <property>sim/multiplay/generic/float[1]</property>
+	  <value>0</value>
+	</not-equals>
+	<equals>
+	  <property>sim/multiplay/generic/int[6]</property>
+	  <value>1</value>
+	</equals>
+	</and>
+      </condition>
+      <volume>
+	<property>sim/multiplay/generic/float[12]</property>
+	<factor>0.052</factor>
+	<min>0.3</min>
+	<max>1.0</max>
+	<offset>0.10</offset>
+      </volume>
+      <pitch>
+	<property>sim/multiplay/generic/float[12]</property>
+	<factor>0.0075</factor>
+	<min>0.0</min>
+	<max>0.5</max>
+      </pitch>
+    </engineh>
+    
+    <enginer>
+      <name>engine reverse beeping</name>
+      <mode>looped</mode>
+      <path>Aircraft/cat793D/Sounds/cat-reversebeep.wav</path>
+      <condition>
+	<and>
+	<equals>
+	  <property>sim/multiplay/generic/float[1]</property>
+	  <value>-1</value>
+	</equals>
+	<equals>
+	  <property>sim/multiplay/generic/int[6]</property>
+	  <value>1</value>
+	</equals>
+	</and>
+      </condition>
+      <volume>
+	<property>sim/multiplay/generic/float[12]</property>
+	<factor>0.052</factor>
+	<min>0.3</min>
+	<max>1.0</max>
+	<offset>0.10</offset>
+      </volume>      
+    </enginer>
+    
+    <drifting>
+      <name>drifting</name>
+      <mode>looped</mode>
+      <path>Aircraft/cat793D/Sounds/Renault4-drifting.wav</path>
+      <condition>
+	<or>
+	<greater-than>
+	  <property>sim/multiplay/generic/float[9]</property>
+	  <value>190000</value>
+	</greater-than>
+	<less-than>
+	  <property>sim/multiplay/generic/float[9]</property>
+	  <value>-190000</value>
+	</less-than>
+	</or>
+      </condition>
+      <volume>
+	<property>sim/multiplay/generic/float[10]</property>
+	<factor>0.04</factor>
+	<max>1</max>
+      </volume>
+    </drifting>
+    
+    <tire-rumble>
+      <name>tire-rumble</name>
+      <mode>looped</mode>
+      <path>Sounds/rumble.wav</path>
+      <condition>
+	<or>
+	  <property>sim/multiplay/generic/int[0]</property>
+	  <property>sim/multiplay/generic/int[1]</property>
+	  <property>sim/multiplay/generic/int[2]</property>
+	  <property>sim/multiplay/generic/int[3]</property>
+	</or>
+      </condition>
+      <volume>
+	<property>sim/multiplay/generic/float[10]</property>
+	<factor>.012</factor>
+	<max>1</max>
+      </volume>
+    </tire-rumble>
+    
+    <brake>
+      <name>brake</name>
+      <mode>once</mode>
+      <path>Aircraft/cat793D/Sounds/Renault4-brake.wav</path>
+      <condition>
+	<and>
+	  <greater-than>
+	    <property>sim/multiplay/generic/float[10]</property>
+	    <value>5</value>
+	  </greater-than>
+	  <property>sim/multiplay/generic/int[17]</property>
+	</and>
+      </condition>
+    </brake>
+    
+    <!-- Lader -->
+  
+    <door>
+      <name>opening1</name>
+      <mode>in-transit</mode>
+      <path>Aircraft/cat793D/Sounds/lader.wav</path>
+      <condition>
+	<and>
+	<greater-than>
+          <property>sim/multiplay/generic/float[2]</property>
+          <value>0.001</value>
+        </greater-than>
+	<less-than>
+          <property>sim/multiplay/generic/float[2]</property>
+          <value>0.995</value>
+        </less-than>
+	</and>
+      </condition>
+      <volume>
+        <factor>1</factor>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </door>
+    
+    
+    <doorc>
+      <name>closing1</name>
+      <mode>once</mode>
+      <path>Aircraft/cat793D/Sounds/Renault4-doorclose.wav</path>
+      <condition>
+       
+	<less-than>
+          <property>sim/multiplay/generic/float[2]</property>
+          <value>0.02</value>
+        </less-than>
+	
+      </condition>
+      <volume>
+        <factor>1</factor>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </doorc>
+    
+    <horn>
+      <name>horn</name>
+      <mode>once</mode>
+      <path>Aircraft/cat793D/Sounds/cat-horn.wav</path>
+      <condition>
+       
+	<equals>
+          <property>sim/multiplay/generic/int[18]</property>
+          <value>1</value>
+        </equals>
+	
+      </condition>
+      <volume>
+        <factor>1</factor>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </horn>
+    
+    
+    </fx>
+</PropertyList>

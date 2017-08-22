@@ -1,0 +1,1385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!--
+    ################################################################################################
+    modified or copyright by Herbert Wagner 01/2016 for cat793D heavy off highway truck (Flightgear)
+    ################################################################################################
+-->
+
+<PropertyList>
+  
+  <path>cat793D-17.ac</path>
+  
+  <nasal>
+    <load>
+      var livery_update = aircraft.livery_update.new("Aircraft/cat793D/Models/Liveries", 10);
+    </load>
+    <unload>
+      livery_update.stop();
+    </unload>
+  </nasal>
+  
+  <sound>
+    <path>Aircraft/cat793D/Sounds/cat793D-sound.xml</path>
+  </sound> 
+  
+<!--  <model>
+  <name>Board</name>
+   <offsets>
+    <x-m>-1.375</x-m>
+    <y-m>-3.32</y-m>
+    <z-m>1.065</z-m>
+   </offsets>
+  <path>board.ac</path>
+  </model>-->
+ 
+ <model>
+  <name>Seat-Drive</name>
+   <offsets>
+    <x-m>0</x-m>
+    <y-m>0</y-m>
+    <z-m>0</z-m>
+    <heading-deg>0</heading-deg>
+   </offsets>
+  <path>seat-drive01.ac</path>
+ </model>
+  
+  <animation>
+<type>noshadow</type>
+    <object-name>windows</object-name>
+</animation>
+
+<animation>
+    <type>material</type>
+       <object-name>windows</object-name>       
+       <emission>
+    <factor-prop>sim/multiplay/generic/int[5]</factor-prop>
+      <red>   0.0 </red>
+      <green> 0.05 </green>
+      <blue>  0.15 </blue>
+    </emission>
+</animation>
+  
+<animation>
+   <type>noshadow</type>
+    <object-name>windows</object-name>
+  </animation>
+
+  <!-- working for Rembrandt -->
+      
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>/sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>windows</object-name>
+  </effect>
+  
+  <animation>
+    <object-name>windows</object-name>
+</animation> 
+  
+  
+  
+  <animation>
+    <object-name>Achse-v</object-name>
+    <object-name>Achse-h</object-name>
+    <object-name>Body</object-name>
+    <object-name>Lader</object-name>
+    <object-name>kappe</object-name>    
+    <object-name>kappe.001</object-name>    
+    <object-name>kappe.002</object-name>    
+    <object-name>kappe.003</object-name>    
+    <object-name>kappe.004</object-name>    
+    <object-name>kappe.005</object-name>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>Achse-v</object-name>
+    <object-name>Achse-h</object-name>
+    <object-name>Body</object-name>
+    <object-name>Lader</object-name>
+    <object-name>kappe</object-name>    
+    <object-name>kappe.001</object-name>    
+    <object-name>kappe.002</object-name>    
+    <object-name>kappe.003</object-name>    
+    <object-name>kappe.004</object-name>    
+    <object-name>kappe.005</object-name>
+    <property-base>sim/model/livery</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>yellow.png</texture>
+    <emission>
+      <factor-prop>/sim/time/sun-angle-rad</factor-prop>
+      <red>   0.001 </red>
+      <green> 0.001 </green>
+      <blue>  0.001 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>reifen</object-name>    
+    <object-name>reifen.001</object-name>    
+    <object-name>reifen.002</object-name>    
+    <object-name>reifen.003</object-name>    
+    <object-name>reifen.004</object-name>    
+    <object-name>reifen.005</object-name>    
+    <condition>
+      <greater-than>
+	<property>/sim/time/sun-angle-rad</property>
+	<value>1.57</value>
+      </greater-than>
+    </condition>
+    <emission>  
+      <red>   0.05 </red>
+      <green> 0.05 </green>
+      <blue>  0.05 </blue>
+    </emission>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/cat793D/Models/Effects/skin-reflect</inherits-from>
+    <condition>
+      <not><property>/sim/rendering/rembrandt/enabled</property></not>
+    </condition>
+    <object-name>Achse-v</object-name>
+    <object-name>Achse-h</object-name>
+    <object-name>Body</object-name>
+    <object-name>Lader</object-name>
+    <object-name>Blackparts</object-name>
+    <object-name>reifen</object-name>
+    <object-name>kappe</object-name>
+    <object-name>reifen.001</object-name>
+    <object-name>kappe.001</object-name>
+    <object-name>reifen.002</object-name>
+    <object-name>kappe.002</object-name>
+    <object-name>reifen.003</object-name>
+    <object-name>kappe.003</object-name>
+    <object-name>reifen.004</object-name>
+    <object-name>kappe.004</object-name>
+    <object-name>reifen.005</object-name>
+    <object-name>kappe.005</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Effects/model-combined-deferred</inherits-from>
+    <condition>
+      <property>/sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>Achse-v</object-name>
+    <object-name>Achse-h</object-name>
+    <object-name>Body</object-name>
+    <object-name>Lader</object-name> 
+    <object-name>Blackparts</object-name>
+    <object-name>reifen</object-name>
+    <object-name>kappe</object-name>
+    <object-name>reifen.001</object-name>
+    <object-name>kappe.001</object-name>
+    <object-name>reifen.002</object-name>
+    <object-name>kappe.002</object-name>
+    <object-name>reifen.003</object-name>
+    <object-name>kappe.003</object-name>
+    <object-name>reifen.004</object-name>
+    <object-name>kappe.004</object-name>
+    <object-name>reifen.005</object-name>
+    <object-name>kappe.005</object-name>
+  </effect>
+
+  <!-- Horn -->
+
+<animation>
+ <type>pick</type>
+ <object-name>Horn</object-name>
+ <visible>true</visible>
+ <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <property>sim/multiplay/generic/int[18]</property>
+        <value>1</value>
+      </binding>
+    <mod-up>
+        <binding>
+        <command>property-assign</command>
+        <property>sim/multiplay/generic/int[18]</property>
+        <value>0</value>
+        </binding>
+    </mod-up>
+  </action>
+</animation>
+
+<animation>
+    <type>translate</type>
+    <object-name>Horn</object-name>    
+    <property>sim/multiplay/generic/int[18]</property>
+    <interpolation>
+      <entry><ind> 0.00 </ind><dep> 0.0 </dep></entry>
+      <entry><ind> 1.00 </ind><dep>  0.002 </dep></entry>
+    </interpolation>
+    <axis>
+  <x1-m> -4.679 </x1-m>
+  <y1-m> -2.028 </y1-m>
+  <z1-m>  4.781 </z1-m>
+  <x2-m>-4.782</x2-m>
+  <y2-m>-2.028</y2-m>
+  <z2-m>4.678</z2-m>
+ </axis>
+  </animation>
+ 
+  <!-- Drive --> /controls/horn
+  <animation>
+    <type>rotate</type>
+    <object-name>Drive</object-name> 
+    <property>controls/switches/gauge-light</property>
+    <factor>30 </factor>
+    <axis>
+  <x1-m> -4.679 </x1-m>
+  <y1-m> -2.028 </y1-m>
+  <z1-m>  4.781 </z1-m>
+  <x2-m>-4.782</x2-m>
+  <y2-m>-2.028</y2-m>
+  <z2-m>4.678</z2-m>
+ </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>Drive</object-name> 
+    <object-name>Horn</object-name>
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor>75 </factor>
+    
+    <axis>
+  <x1-m> -4.679 </x1-m>
+  <y1-m> -2.028 </y1-m>
+  <z1-m>  4.781 </z1-m>
+  <x2-m>-4.782</x2-m>
+  <y2-m>-2.028</y2-m>
+  <z2-m>4.678</z2-m>
+ </axis>
+  </animation>
+  
+  <!-- gears-->
+  <!-- compress -->
+  <animation>
+    <type>translate</type>
+    <object-name>reifen.002</object-name>
+    <object-name>kappe.002</object-name>
+    <property>gear/gear[0]/compression-norm</property>
+    <interpolation>
+      <entry><ind> 0.00 </ind><dep> -0.0 </dep></entry>
+      <entry><ind> 1.00 </ind><dep>  0.38 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+  <animation>
+    <type>translate</type>
+    <object-name>reifen</object-name>
+    <object-name>kappe</object-name>
+    <property>gear/gear[1]/compression-norm</property>
+    <interpolation>
+      <entry><ind> 0.00 </ind><dep> -0.0 </dep></entry>
+      <entry><ind> 1.00 </ind><dep>  0.38 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+  <animation>
+    <type>translate</type>
+    <object-name>reifen.003</object-name>
+    <object-name>kappe.003</object-name>
+    <property>gear/gear[2]/compression-norm</property>
+    <interpolation>
+      <entry><ind> 0.00 </ind><dep> -0.0 </dep></entry>
+      <entry><ind> 1.00 </ind><dep>  0.38 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+  <animation>
+    <type>translate</type>
+    <object-name>reifen.001</object-name>
+    <object-name>kappe.001</object-name>
+    <property>gear/gear[4]/compression-norm</property>
+    <interpolation>
+      <entry><ind> 0.00 </ind><dep> -0.0 </dep></entry>
+      <entry><ind> 1.00 </ind><dep>  0.38 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+  <animation>
+    <type>translate</type>
+    <object-name>reifen.004</object-name>
+    <object-name>kappe.004</object-name>
+    <property>gear/gear[3]/compression-norm</property>
+    <interpolation>
+      <entry><ind> 0.00 </ind><dep> -0.0 </dep></entry>
+      <entry><ind> 1.00 </ind><dep>  0.38 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+  <animation>
+    <type>translate</type>
+    <object-name>reifen.005</object-name>
+    <object-name>kappe.005</object-name>
+    <property>sim/multiplay/generic/float[13]</property>
+    <interpolation>
+      <entry><ind> 0.00 </ind><dep> -0.0 </dep></entry>
+      <entry><ind> 1.00 </ind><dep>  0.38 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+  
+  <!-- steer -->  
+  <animation>
+    <type>rotate</type>
+    <object-name>Achse-v</object-name>
+    <object-name>reifen.002</object-name>
+    <object-name>kappe.002</object-name>
+    <object-name>reifen</object-name>
+    <object-name>kappe</object-name>
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor>-10 </factor>
+    <center>
+      <x-m> -3.010 </x-m>
+      <y-m>  0.0 </y-m>
+      <z-m>  1.787 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+  
+  <!-- spin -->   
+  <animation>
+    <type>spin</type>
+    <object-name>reifen.002</object-name>
+    <object-name>kappe.002</object-name>
+    <property>sim/multiplay/generic/float[11]</property>
+ <factor>-1.5</factor>
+    <center>
+      <x-m>-3.033</x-m>
+      <y-m>-2.966</y-m>
+      <z-m>1.787</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>spin</type>
+    <object-name>reifen</object-name>
+    <object-name>kappe</object-name>
+    <property>sim/multiplay/generic/float[14]</property>
+ <factor>-1.5</factor>
+    <center>
+      <x-m>-2.987</x-m>
+      <y-m>2.966</y-m>
+      <z-m>1.787</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>spin</type>
+    <object-name>reifen.003</object-name>
+    <object-name>kappe.003</object-name>
+    <object-name>reifen.001</object-name>
+    <object-name>kappe.001</object-name>
+    <property>sim/multiplay/generic/float[8]</property>
+ <factor>-1.5</factor>
+    <center>
+      <x-m>2.872</x-m>
+      <y-m>-3.196</y-m>
+      <z-m>1.787</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>spin</type>
+    <object-name>reifen.004</object-name>
+    <object-name>kappe.004</object-name>
+    <object-name>reifen.005</object-name>
+    <object-name>kappe.005</object-name>
+    <property>sim/multiplay/generic/float[15]</property>
+ <factor>-1.5</factor>
+    <center>
+      <x-m>2.918</x-m>
+      <y-m>3.196</y-m>
+      <z-m>1.787</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
+  <!--smoke and tire effects -->
+<model> 
+ <path>Aircraft/cat793D/Models/Effects/smoke.xml</path>
+ <offsets> 
+  <x-m> -2.32</x-m>
+  <y-m>-2.75</y-m>
+  <z-m> 0.12</z-m>
+  <pitch-deg>0.0</pitch-deg>
+ </offsets>
+</model>
+<model> 
+ <path>Aircraft/cat793D/Models/Effects/smoke.xml</path>
+ <offsets> 
+  <x-m> -2.32</x-m>
+  <y-m> 2.75</y-m>
+  <z-m> 0.12</z-m>
+  <pitch-deg>0.0</pitch-deg>
+ </offsets>
+</model>
+<model> 
+ <path>Aircraft/cat793D/Models/Effects/smoke.xml</path>
+ <offsets> 
+  <x-m> 3.522</x-m>
+  <y-m>-2.46</y-m>
+  <z-m> 0.12</z-m>
+  <pitch-deg>0.0</pitch-deg>
+ </offsets>
+</model>
+<model> 
+ <path>Aircraft/cat793D/Models/Effects/smoke.xml</path>
+ <offsets> 
+  <x-m> 3.522</x-m>
+  <y-m> 2.46</y-m>
+  <z-m> 0.12</z-m>
+  <pitch-deg>0.0</pitch-deg>
+ </offsets>
+</model>
+
+<model> 
+ <path>Aircraft/cat793D/Models/Effects/smoke-grass.xml</path>
+ <offsets> 
+  <x-m> -2.32</x-m>
+  <y-m>-2.75</y-m>
+  <z-m> 0.12</z-m>
+  <pitch-deg>0.0</pitch-deg>
+ </offsets>
+</model>
+<model> 
+ <path>Aircraft/cat793D/Models/Effects/smoke-grass.xml</path>
+ <offsets> 
+  <x-m> -2.32</x-m>
+  <y-m>2.75</y-m>
+  <z-m> 0.12</z-m>
+  <pitch-deg>0.0</pitch-deg>
+ </offsets>
+</model>
+<model> 
+ <path>Aircraft/cat793D/Models/Effects/smoke-grass.xml</path>
+ <offsets> 
+  <x-m> 3.522</x-m>
+  <y-m>-2.46</y-m>
+  <z-m> 0.12</z-m>
+  <pitch-deg>0.0</pitch-deg>
+ </offsets>
+</model>
+<model> 
+ <path>Aircraft/cat793D/Models/Effects/smoke-grass.xml</path>
+ <offsets> 
+  <x-m> 3.522</x-m>
+  <y-m>2.46</y-m>
+  <z-m> 0.12</z-m>
+  <pitch-deg>0.0</pitch-deg>
+ </offsets>
+</model>
+
+<model> 
+ <path>Aircraft/cat793D/Models/Effects/smoke-sand.xml</path>
+ <offsets> 
+  <x-m> -2.32</x-m>
+  <y-m>-2.75</y-m>
+  <z-m> 0.12</z-m>
+  <pitch-deg>0.0</pitch-deg>
+ </offsets>
+</model>
+<model> 
+ <path>Aircraft/cat793D/Models/Effects/smoke-sand.xml</path>
+ <offsets> 
+  <x-m> -2.32</x-m>
+  <y-m>2.75</y-m>
+  <z-m> 0.12</z-m>
+  <pitch-deg>0.0</pitch-deg>
+ </offsets>
+</model>
+<model> 
+ <path>Aircraft/cat793D/Models/Effects/smoke-sand.xml</path>
+ <offsets> 
+  <x-m> 3.522</x-m>
+  <y-m>-2.46</y-m>
+  <z-m> 0.12</z-m>
+  <pitch-deg>0.0</pitch-deg>
+ </offsets>
+</model>
+<model> 
+ <path>Aircraft/cat793D/Models/Effects/smoke-sand.xml</path>
+ <offsets> 
+  <x-m> 3.522</x-m>
+  <y-m>2.46</y-m>
+  <z-m> 0.12</z-m>
+  <pitch-deg>0.0</pitch-deg>
+ </offsets>
+</model>
+
+<model> 
+ <path>Aircraft/cat793D/Models/Effects/smoke-snow.xml</path>
+ <offsets> 
+  <x-m> -2.32</x-m>
+  <y-m>-2.75</y-m>
+  <z-m> 0.12</z-m>
+  <pitch-deg>0.0</pitch-deg>
+ </offsets>
+</model>
+<model> 
+ <path>Aircraft/cat793D/Models/Effects/smoke-snow.xml</path>
+ <offsets> 
+  <x-m> -2.32</x-m>
+  <y-m>2.75</y-m>
+  <z-m> 0.12</z-m>
+  <pitch-deg>0.0</pitch-deg>
+ </offsets>
+</model>
+<model> 
+ <path>Aircraft/cat793D/Models/Effects/smoke-snow.xml</path>
+ <offsets> 
+  <x-m> 3.522</x-m>
+  <y-m>-2.46</y-m>
+  <z-m> 0.12</z-m>
+  <pitch-deg>0.0</pitch-deg>
+ </offsets>
+</model>
+<model> 
+ <path>Aircraft/cat793D/Models/Effects/smoke-snow.xml</path>
+ <offsets> 
+  <x-m> 3.522</x-m>
+  <y-m>2.46</y-m>
+  <z-m> 0.12</z-m>
+  <pitch-deg>0.0</pitch-deg>
+ </offsets>
+</model>
+
+<model> 
+ <path>Aircraft/cat793D/Models/Effects/tyres.xml</path>
+ <offsets> 
+  <x-m> -2.32</x-m>
+  <y-m>-2.75</y-m>
+  <z-m> 0.22</z-m>
+ </offsets>
+</model>
+<model> 
+ <path>Aircraft/cat793D/Models/Effects/tyres.xml</path>
+ <offsets> 
+  <x-m> -2.32</x-m>
+  <y-m>2.75</y-m>
+  <z-m> 0.22</z-m>
+ </offsets>
+</model>
+<model> 
+ <path>Aircraft/cat793D/Models/Effects/tyres.xml</path>
+ <offsets> 
+  <x-m> 3.522</x-m>
+  <y-m>-2.46</y-m>
+  <z-m> 0.22</z-m>
+ </offsets>
+</model>
+<model> 
+ <path>Aircraft/cat793D/Models/Effects/tyres.xml</path>
+ <offsets> 
+  <x-m> 3.522</x-m>
+  <y-m>2.46</y-m>
+  <z-m> 0.22</z-m>
+ </offsets>
+</model>
+
+<model> 
+ <path>Aircraft/cat793D/Models/Effects/engine.xml</path>
+ <offsets> 
+  <x-m> -2.632</x-m>
+  <y-m> 3.516</y-m>
+  <z-m> 4.226</z-m>
+ </offsets>
+</model>
+
+<model> 
+ <path>Aircraft/cat793D/Models/Effects/running.xml</path>
+ <offsets> 
+  <x-m> -2.632</x-m>
+  <y-m> 3.516</y-m>
+  <z-m> 4.226</z-m>
+ </offsets>
+</model>
+
+<!-- Lader -->
+
+<animation>
+ <type>pick</type>
+ <object-name>Lader</object-name>
+ <visible>true</visible>
+ <action>
+  <button>0</button>
+  <repeatable>false</repeatable>  
+  <binding>
+   <command>nasal</command>
+   <script>doors.frontleft.toggle();</script>
+  </binding>
+  <binding>
+	<command>property-toggle</command>
+	<property>controls/storage/jump-signal</property>
+      </binding>
+ </action>
+</animation>
+ 
+<animation>
+ <type>rotate</type>
+ <object-name>Lader</object-name>
+ <object-name>Callsign</object-name> 
+ <property>sim/multiplay/generic/float[2]</property>
+ <factor>45</factor>
+ <axis>
+  <x1-m>3.729</x1-m>
+  <y1-m>-1.163</y1-m>
+  <z1-m>3.914</z1-m>
+  <x2-m>3.729</x2-m>
+  <y2-m>1.163</y2-m>
+  <z2-m>3.914</z2-m>
+ </axis>
+</animation>
+
+<model> 
+ <path>Aircraft/cat793D/Models/payload.xml</path>
+</model>
+
+<model> 
+ <path>Aircraft/cat793D/Models/payload-static.xml</path>
+</model>
+
+<!--Payload/Storage Switches -->
+
+<!-- Storage Signal Switch-->
+ 
+ <model>
+    <path>Aircraft/cat793D/Models/Instruments/storage_signal.xml</path>
+      <offsets>
+      <x-m> -4.984 </x-m>
+      <y-m> -1.848 </y-m>
+      <z-m> 4.846 </z-m>
+      <pitch-deg>-45</pitch-deg>
+    </offsets>
+  </model>  
+  
+  <text>
+    <name>storage_signal</name>
+    <type type="string">literal</type>
+    <text type="string">
+      Loader up
+      
+      
+      
+      
+      Loader down</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.012</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <axis-alignment>yz-plane</axis-alignment>
+    <max-height>0.20</max-height>
+    <max-width>0.12</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+      <x-m> -4.984 </x-m>
+      <y-m> -1.863 </y-m>
+      <z-m> 4.846 </z-m>
+      <pitch-deg>-45</pitch-deg>
+    </offsets>
+  </text>
+  
+  <animation>
+    <type>material</type>    
+    <object-name>storage_signal</object-name>    
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.6 </red>
+      <green> 0.6 </green>
+      <blue>  0.6 </blue>
+    </emission>
+  </animation>
+  
+      <!-- Storage Load Switch -->
+ 
+ <model>
+    <path>Aircraft/cat793D/Models/Instruments/storage_load.xml</path>
+    <offsets>
+      <x-m> -4.984 </x-m>
+      <y-m> -1.788 </y-m>
+      <z-m> 4.846 </z-m>
+      <pitch-deg>-45</pitch-deg>
+    </offsets>
+  </model>  
+  
+  <text>
+    <name>storage_load</name>
+    <type type="string">literal</type>
+    <text type="string">
+      Loading     
+      
+      
+      
+      
+      Unloading</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.012</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <axis-alignment>yz-plane</axis-alignment>
+    <max-height>0.20</max-height>
+    <max-width>0.09</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+      <x-m> -4.984 </x-m>
+      <y-m> -1.803 </y-m>
+      <z-m> 4.846 </z-m>
+      <pitch-deg>-45</pitch-deg>
+    </offsets>
+  </text>
+  
+  <animation>
+    <type>material</type>    
+    <object-name>storage_load</object-name>    
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.6 </red>
+      <green> 0.6 </green>
+      <blue>  0.6 </blue>
+    </emission>
+  </animation>
+  
+  <!-- Payload effects  -->
+  
+  <model> 
+    <path>Aircraft/cat793D/Models/payload-smoke.xml</path>
+    <offsets> 
+      <x-m> 11</x-m>
+      <y-m>0</y-m>
+      <z-m> 4.5</z-m>
+    </offsets>
+  </model>
+  
+  <model> 
+    <path>Aircraft/cat793D/Models/Effects/payload-smoking.xml</path>
+    <offsets> 
+      <x-m> 4.73</x-m>
+      <y-m>0</y-m>
+      <z-m> 3.71</z-m>
+    </offsets>
+  </model>
+  
+  <model> 
+    <path>Aircraft/cat793D/Models/Effects/payload-fallout-l.xml</path>
+    <offsets> 
+      <x-m> 2.73</x-m>
+      <y-m>-3.50</y-m>
+      <z-m> 4.85</z-m>
+      <pitch-deg>90</pitch-deg>
+      <heading-deg>-90</heading-deg>
+    </offsets>
+  </model>
+  <model> 
+    <path>Aircraft/cat793D/Models/Effects/payload-fallout-r.xml</path>
+    <offsets> 
+      <x-m> 2.73</x-m>
+      <y-m>3.50</y-m>
+      <z-m> 4.85</z-m>
+      <pitch-deg>90</pitch-deg>
+      <heading-deg>90</heading-deg>
+    </offsets>
+  </model>
+  
+  <!-- INSTRUMENTS -->
+
+  <model> 
+    <path>Aircraft/cat793D/Models/Instruments/control-unit1.xml</path>
+    <offsets> 
+      <x-m> -4.984 </x-m>
+      <y-m> -2.311 </y-m>
+      <z-m> 4.846 </z-m>
+      <pitch-deg>-45</pitch-deg>
+    </offsets>
+  </model>
+  <model> 
+    <path>Aircraft/cat793D/Models/Instruments/control-unit2.xml</path>
+    <offsets> 
+      <x-m> -4.984 </x-m>
+      <y-m> -2.343 </y-m>
+      <z-m> 4.846 </z-m>
+      <pitch-deg>-45</pitch-deg>
+    </offsets>
+  </model>
+  <model> 
+    <path>Aircraft/cat793D/Models/Instruments/control-unit3.xml</path>
+    <offsets> 
+      <x-m> -4.941 </x-m>
+      <y-m> -2.311 </y-m>
+      <z-m> 4.803 </z-m>
+      <pitch-deg>-45</pitch-deg>
+    </offsets>
+  </model>
+  <model> 
+    <path>Aircraft/cat793D/Models/Instruments/control-unit4.xml</path>
+    <offsets> 
+      <x-m> -4.941 </x-m>
+      <y-m> -2.343 </y-m>
+      <z-m> 4.803 </z-m>
+      <pitch-deg>-45</pitch-deg>
+    </offsets>
+  </model>
+  
+  <model> 
+    <path>Aircraft/cat793D/Models/Instruments/control-unit5.xml</path>
+    <offsets> 
+      <x-m> -4.984 </x-m>
+      <y-m> -2.279 </y-m>
+      <z-m> 4.846 </z-m>
+      <pitch-deg>-45</pitch-deg>
+    </offsets>
+  </model>
+  <model> 
+    <path>Aircraft/cat793D/Models/Instruments/control-unit6.xml</path>
+    <offsets> 
+      <x-m> -4.984 </x-m>
+      <y-m> -2.247 </y-m>
+      <z-m> 4.846 </z-m>
+      <pitch-deg>-45</pitch-deg>
+    </offsets>
+  </model>
+  <model> 
+    <path>Aircraft/cat793D/Models/Instruments/control-unit7.xml</path>
+    <offsets> 
+      <x-m> -4.941 </x-m>
+      <y-m> -2.279 </y-m>
+      <z-m> 4.803 </z-m>
+      <pitch-deg>-45</pitch-deg>
+    </offsets>
+  </model>
+  <model> 
+    <path>Aircraft/cat793D/Models/Instruments/control-unit8.xml</path>
+    <offsets> 
+      <x-m> -4.941 </x-m>
+      <y-m> -2.247 </y-m>
+      <z-m> 4.803 </z-m>
+      <pitch-deg>-45</pitch-deg>
+    </offsets>
+  </model>
+
+<model> 
+ <path>Aircraft/cat793D/Models/Instruments/fuelgauge.xml</path>
+ <offsets> 
+      <x-m> -4.976 </x-m>
+      <y-m> -1.699 </y-m>
+      <z-m> 4.838 </z-m>
+      <pitch-deg>-45</pitch-deg>
+ </offsets>
+</model>
+
+<model> 
+ <path>Aircraft/cat793D/Models/Instruments/multigauge/speedmeter.xml</path>
+ <offsets> 
+  <x-m> -4.968 </x-m>
+      <y-m> -2.145 </y-m>
+      <z-m> 4.83 </z-m>
+      <pitch-deg>-45</pitch-deg>
+ </offsets>
+</model>
+
+<model> 
+ <path>Aircraft/cat793D/Models/Instruments/starter.xml</path>
+ <offsets>
+      <x-m> -4.936 </x-m>
+      <y-m> -2.065 </y-m>
+      <z-m> 4.803 </z-m>
+      <pitch-deg>-45</pitch-deg>
+    </offsets>
+</model>
+
+<model> 
+ <path>Aircraft/cat793D/Models/Messages/P.xml</path>
+ <offsets> 
+  <x-m> -4.984 </x-m>
+      <y-m> -1.998 </y-m>
+      <z-m> 4.846 </z-m>
+  <pitch-deg>-45.0</pitch-deg>
+ </offsets>
+</model>
+<model> 
+ <path>Aircraft/cat793D/Models/Messages/R.xml</path>
+ <offsets> 
+  <x-m> -4.967 </x-m>
+      <y-m> -1.998 </y-m>
+      <z-m> 4.829 </z-m>
+  <pitch-deg>-45.0</pitch-deg>
+ </offsets>
+</model>
+<model> 
+ <path>Aircraft/cat793D/Models/Messages/N.xml</path>
+ <offsets> 
+  <x-m> -4.951 </x-m>
+      <y-m> -1.998 </y-m>
+      <z-m> 4.813 </z-m>
+  <pitch-deg>-45.0</pitch-deg>
+ </offsets>
+</model>
+<model> 
+ <path>Aircraft/cat793D/Models/Messages/D.xml</path>
+ <offsets> 
+  <x-m> -4.984 </x-m>
+      <y-m> -1.948 </y-m>
+      <z-m> 4.846 </z-m>
+  <pitch-deg>-45.0</pitch-deg>
+ </offsets>
+</model>
+<model> 
+ <path>Aircraft/cat793D/Models/Messages/D2.xml</path>
+ <offsets> 
+  <x-m> -4.967 </x-m>
+      <y-m> -1.948 </y-m>
+      <z-m> 4.829 </z-m>
+  <pitch-deg>-45.0</pitch-deg>
+ </offsets>
+</model>
+
+<model> 
+ <path>Aircraft/cat793D/Models/Instruments/switch-battery.xml</path>
+ <offsets>
+      <x-m> -5.001 </x-m>
+      <y-m> -2.086 </y-m>
+      <z-m> 4.863 </z-m>
+      <pitch-deg>-45</pitch-deg>
+    </offsets>
+</model>
+
+<model> 
+ <path>Aircraft/cat793D/Models/Instruments/switch-indicators.xml</path>
+ <offsets>
+      <x-m> -5.001 </x-m>
+      <y-m> -2.048 </y-m>
+      <z-m> 4.863 </z-m>
+      <pitch-deg>-45</pitch-deg>
+    </offsets>
+</model>
+
+<model> 
+ <path>Aircraft/cat793D/Models/Instruments/switch-warninglights.xml</path>
+ <offsets>
+      <x-m> -5.001 </x-m>
+      <y-m> -1.998 </y-m>
+      <z-m> 4.863 </z-m>
+      <pitch-deg>-45</pitch-deg>
+    </offsets>
+</model>
+
+<model> 
+ <path>Aircraft/cat793D/Models/Effects/warninglight.xml</path>
+ <offsets>
+      <x-m> -6.60 </x-m>
+      <y-m> 0.62 </y-m>
+      <z-m> 1.88 </z-m>
+      <pitch-deg>-45</pitch-deg>
+    </offsets>
+</model>
+
+<model> 
+ <path>Aircraft/cat793D/Models/Effects/warninglight.xml</path>
+ <offsets>
+      <x-m> 3.44 </x-m>
+      <y-m> -0.0 </y-m>
+      <z-m> 1.78 </z-m>
+      <pitch-deg>-45</pitch-deg>
+    </offsets>
+</model>
+
+<model> 
+ <path>Aircraft/cat793D/Models/Instruments/switch-lights.xml</path>
+ <offsets>
+      <x-m> -5.001 </x-m>
+      <y-m> -1.948 </y-m>
+      <z-m> 4.863 </z-m>
+      <pitch-deg>-45</pitch-deg>
+    </offsets>
+</model>
+
+<model> 
+ <path>Aircraft/cat793D/Models/Instruments/switch-lights-far.xml</path>
+ <offsets>
+      <x-m> -5.001 </x-m>
+      <y-m> -1.898 </y-m>
+      <z-m> 4.863 </z-m>
+      <pitch-deg>-45</pitch-deg>
+    </offsets>
+</model>
+
+<model> 
+ <path>Aircraft/cat793D/Models/Instruments/park-brake-light.xml</path>
+ <offsets>
+      <x-m> -4.994 </x-m>
+      <y-m> -2.048 </y-m>
+      <z-m> 4.821 </z-m>
+      <pitch-deg>-45</pitch-deg>
+    </offsets>
+</model>
+
+<model> 
+ <path>Aircraft/cat793D/Models/Instruments/switch-park-brake.xml</path>
+ <offsets>
+      <x-m> -4.958 </x-m>
+      <y-m> -2.048 </y-m>
+      <z-m> 4.828 </z-m>
+      <pitch-deg>-45</pitch-deg>
+    </offsets>
+</model>
+
+<model> 
+ <path>Aircraft/cat793D/Models/Instruments/switch-ADRIVE.xml</path>
+ <offsets>
+      <x-m> -4.931 </x-m>
+      <y-m> -2.186 </y-m>
+      <z-m> 4.793 </z-m>
+      <pitch-deg>-45</pitch-deg>
+    </offsets>
+</model>
+
+<text>
+    <name>Adrive</name>
+    <type type="string">literal</type>
+    <text type="string">ADRIVE</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.008</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <axis-alignment>yz-plane</axis-alignment>
+    <max-height>0.20</max-height>
+    <max-width>0.09</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+      <x-m> -4.921 </x-m>
+      <y-m> -2.186 </y-m>
+      <z-m> 4.783 </z-m>
+      <pitch-deg>-45</pitch-deg>
+    </offsets>
+  </text>
+  
+  <animation>
+    <type>material</type>    
+    <object-name>Adrive</object-name>    
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.6 </red>
+      <green> 0.6 </green>
+      <blue>  0.6 </blue>
+    </emission>
+  </animation>
+
+<model> 
+ <path>Aircraft/cat793D/Models/Instruments/switch-TXDRIVE.xml</path>
+ <offsets>
+      <x-m> -4.931 </x-m>
+      <y-m> -2.146 </y-m>
+      <z-m> 4.793 </z-m>
+      <pitch-deg>-45</pitch-deg>
+    </offsets>
+</model>
+
+<text>
+    <name>TXdrive</name>
+    <type type="string">literal</type>
+    <text type="string">TXDRIVE</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.008</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <axis-alignment>yz-plane</axis-alignment>
+    <max-height>0.20</max-height>
+    <max-width>0.09</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+      <x-m> -4.921 </x-m>
+      <y-m> -2.146 </y-m>
+      <z-m> 4.783 </z-m>
+      <pitch-deg>-45</pitch-deg>
+    </offsets>
+  </text>
+  
+  <animation>
+    <type>material</type>    
+    <object-name>TXdrive</object-name>    
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.6 </red>
+      <green> 0.6 </green>
+      <blue>  0.6 </blue>
+    </emission>
+  </animation>
+  
+  <model> 
+ <path>Aircraft/cat793D/Models/Instruments/switch-TCS.xml</path>
+ <offsets>
+      <x-m> -4.931 </x-m>
+      <y-m> -2.106 </y-m>
+      <z-m> 4.793 </z-m>
+      <pitch-deg>-45</pitch-deg>
+    </offsets>
+</model>
+
+<text>
+    <name>TCS</name>
+    <type type="string">literal</type>
+    <text type="string">TCS</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.008</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <axis-alignment>yz-plane</axis-alignment>
+    <max-height>0.20</max-height>
+    <max-width>0.09</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+      <x-m> -4.921 </x-m>
+      <y-m> -2.106 </y-m>
+      <z-m> 4.783 </z-m>
+      <pitch-deg>-45</pitch-deg>
+    </offsets>
+  </text>
+  
+  <animation>
+    <type>material</type>    
+    <object-name>TCS</object-name>    
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.6 </red>
+      <green> 0.6 </green>
+      <blue>  0.6 </blue>
+    </emission>
+  </animation>
+
+<!-- lamps on front
+  <animation>
+    <type>select</type>
+    <object-name>landinglamp1</object-name>
+    <object-name>landinglamp2</object-name>
+    <object-name>landinglamp1.001</object-name>
+    <object-name>landinglamp2.001</object-name>
+    <object-name>landinglamp1.002</object-name>
+    <object-name>landinglamp2.002</object-name> 
+    <object-name>landinglamp1.003</object-name>
+    <object-name>landinglamp2.003</object-name> 
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>spot_glass-l</object-name>
+    <object-name>spot_glass-r</object-name> 
+    <object-name>spot_glass-l.001</object-name>
+    <object-name>spot_glass-r.001</object-name>
+    <object-name>spot_glass-l.002</object-name>
+    <object-name>spot_glass-r.002</object-name>
+    <object-name>spot_glass-l.003</object-name>
+    <object-name>spot_glass-r.003</object-name>
+    <condition>
+      <property>sim/multiplay/generic/int[4]</property>	  
+    </condition>
+  </animation> -->
+  
+  
+  
+  <animation>
+    <type>select</type>
+    <object-name>landing_plane-l</object-name>
+    <object-name>landing_plane-r.001</object-name>
+    <object-name>landing_plane-r.002</object-name>
+    <object-name>landing_plane-l.003</object-name>    
+    <condition>
+      <and>
+	<not>
+	    <property>sim/rendering/rembrandt/enabled</property>
+	</not>
+        <property>sim/multiplay/generic/int[18]</property>
+      </and>
+    </condition>
+  </animation>
+  
+  <!-- cones for lamps on front-->
+  
+  <animation>    
+    <object-name>Cone-texture.001</object-name>
+    <object-name>Cone-texture.002</object-name>
+    <object-name>Cone-texture.005</object-name>    
+    <object-name>Cone-texture.003</object-name>
+    <nopreview/>
+    </animation>
+    
+<!-- Special Shaders -->
+    
+    <animation>
+      <type>noshadow</type>      
+    <object-name>Cone-texture.001</object-name>
+    <object-name>Cone-texture.002</object-name>    
+    <object-name>Cone-texture.005</object-name>    
+    <object-name>Cone-texture.003</object-name>
+    </animation>
+    
+<!-- working for Rembrandt -->
+    <effect>
+      <inherits-from>Effects/model-transparent</inherits-from>      
+    <object-name>Cone-texture.001</object-name>
+    <object-name>Cone-texture.002</object-name>    
+    <object-name>Cone-texture.005</object-name>    
+    <object-name>Cone-texture.003</object-name>
+    </effect>
+    
+<!-- Landing and Search Light fake cone - disable in rembrand  -->
+    <animation>
+      <type>select</type>      
+    <object-name>Cone-texture.001</object-name>
+    <object-name>Cone-texture.002</object-name>    
+      <condition>
+	<property>sim/multiplay/generic/int[4]</property>
+      </condition>
+    </animation>
+    
+    <animation>
+      <type>select</type>        
+    <object-name>Cone-texture.005</object-name>
+    <object-name>Cone-texture.003</object-name>
+      <condition>
+	<property>sim/multiplay/generic/int[19]</property>
+      </condition>
+    </animation>
+  
+  <!-- indicators -->
+  
+  <animation>
+ <type>material</type>
+ <object-name>Cube</object-name>
+ <object-name>Cube.001</object-name>
+ <object-name>Cube.002</object-name>
+ <object-name>Cube.003</object-name>
+ <object-name>Cube.004</object-name>
+ <object-name>Cube.005</object-name>
+ <emission>
+  <red>1.0</red>
+  <green>0.6</green>
+  <blue>0.0</blue>
+  <factor-prop>sim/multiplay/generic/int[13]</factor-prop>
+ </emission>
+</animation>
+
+<!-- brake-indicators -->
+  
+  <animation>
+    <type>material</type>
+    <object-name>Cube.006</object-name>
+    <object-name>Cube.007</object-name>
+    <emission>
+      <red>1.0</red>
+      <green>0.0</green>
+      <blue>0.0</blue>
+      <factor-prop>sim/multiplay/generic/int[15]</factor-prop>
+    </emission>
+  </animation>
+ 
+ <text>
+        <name>Callsign</name>
+        <offsets>
+            <x-m>-4.91</x-m>
+            <y-m>-0.0</y-m>
+            <z-m>6.25</z-m>
+            <roll-deg>-90</roll-deg>
+            <pitch-deg>0</pitch-deg>
+            <heading-deg>90</heading-deg>
+        </offsets>
+        <alignment>center-center</alignment>
+        <axis-alignment>xz-plane</axis-alignment>
+        <type type="string">text-value</type>
+        <property type="string">sim/multiplay/generic/string[0]</property>
+        <format type="string">%.7s</format>
+        <font>arial_black.txf</font>
+        <character-size>0.4</character-size>
+        <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">128</width>
+            <height type="int">128</height>
+        </font-resolution>
+  </text>
+    
+    <animation>
+        <type>material</type>
+         <object-name>Callsign</object-name>         
+        <emission>
+            <red>0.15</red>
+            <green>0.15</green>
+            <blue>0.3</blue>
+        </emission>        
+    </animation>
+  
+  </PropertyList>

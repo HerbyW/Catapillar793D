@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!--
+    ################################################################################################
+    modified or copyright by Herbert Wagner 01/2016 for cat793D heavy off highway truck (Flightgear)
+    ################################################################################################
+-->
+
+<PropertyList>
+  
+  <path>payload93.ac</path>
+  
+  <animation>
+    <type>material</type>
+    <condition>
+      <greater-than>
+	<property>/sim/time/sun-angle-rad</property>
+	<value>1.57</value>
+      </greater-than>
+    </condition>
+    <emission>  
+      <red>   0.1 </red>
+      <green> 0.1 </green>
+      <blue>  0.1 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+ <type>rotate</type>
+ <property>sim/multiplay/generic/float[2]</property>
+ <interpolation>
+      <entry><ind> 0.00 </ind><dep>  0.0 </dep></entry>
+      <entry><ind> 0.7 </ind><dep>  31.5 </dep></entry>
+      <entry><ind> 0.8 </ind><dep>  36.0 </dep></entry>
+      <entry><ind> 1 </ind><dep>    10.0 </dep></entry>
+    </interpolation>
+ <axis>
+  <x1-m>3.729</x1-m>
+  <y1-m>-1.163</y1-m>
+  <z1-m>3.914</z1-m>
+  <x2-m>3.729</x2-m>
+  <y2-m>1.163</y2-m>
+  <z2-m>3.914</z2-m>
+ </axis>
+</animation>
+
+<animation>
+    <type>translate</type>
+    <property>sim/multiplay/generic/float[2]</property>
+    <interpolation>
+      <entry><ind> 0.00 </ind><dep> 0.0 </dep></entry>
+      <entry><ind> 0.70 </ind><dep>  0.0 </dep></entry>
+      <entry><ind> 0.8 </ind><dep>  4.3 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z>-1 </z>
+    </axis>
+  </animation>
+
+<animation>
+    <type>translate</type>
+    <property>sim/multiplay/generic/float[2]</property>
+    <interpolation>
+      <entry><ind> 0.00 </ind><dep> 0.0 </dep></entry>
+      <entry><ind> 0.70 </ind><dep>  0.0 </dep></entry>
+      <entry><ind> 0.75 </ind><dep>  3.9 </dep></entry>
+      <entry><ind> 0.80 </ind><dep>  7.4 </dep></entry>
+      <entry><ind> 1.0 </ind><dep>  10.0 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+    
+  <animation>
+    <type>select</type>
+    <condition>
+      <and>
+	<property>sim/multiplay/generic/int[10]</property>    
+	<greater-than>
+	  <property>sim/multiplay/generic/float[7]</property>
+	  <value>1</value>
+	</greater-than>
+      </and>
+    </condition>
+  </animation>
+  
+  </PropertyList>

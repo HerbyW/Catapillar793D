@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+   copyright herbyw 2016 (based on DME40 instrument)
+-->
+
+<PropertyList>
+
+<path>speedmeter.ac</path>
+
+
+
+
+   <!-- Lights -->
+
+  <animation>
+    <object-name>DME</object-name>    
+  </animation>
+
+  <!-- working for Rembrandt -->
+
+  <animation>
+    <type>material</type>
+     <object-name>DME</object-name>
+     <object-name>DME.invalid</object-name>
+     <object-name>n2</object-name>         
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.35 </red>
+      <green> 0.35 </green>
+      <blue>  0.35 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>material</type>    
+     <object-name>min1</object-name>
+     <object-name>min10</object-name>
+     <object-name>min100</object-name> 
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.55 </red>
+      <green> 0.55 </green>
+      <blue>  0.55 </blue>
+    </emission>
+  </animation>
+  
+  
+<!-- needle  -->
+ <animation>
+  <type>rotate</type>
+  <object-name>n2</object-name>
+  <property>/velocities/Drehzahl</property>
+  <factor>-8.5</factor>
+  <center>
+   <x-m>0.0</x-m>
+   <y-m>0.000918</y-m>
+   <z-m>-0.0035</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+
+    <animation>
+        <type>select</type>
+        <object-name>DME.invalid</object-name>
+		  <condition>
+			<less-than>
+			<property>controls/switches/gauge-light</property>
+			<value>1</value>
+			</less-than>
+		  </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+		  <object-name>min1</object-name>
+		  <object-name>min10</object-name>
+		  <object-name>min100</object-name>
+		  <condition>
+			<greater-than>
+			<property>controls/switches/gauge-light</property>
+			<value>0</value>
+			</greater-than>
+		  </condition>
+    </animation>
+
+<!-- minutes -->
+    <animation>
+        <type>textranslate</type>
+        <object-name>min100</object-name>
+        <property>velocities/groundspeed-kt</property>
+        <factor>0.01</factor>
+			<step>10</step>
+			<bias>0.5</bias>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>min10</object-name>
+        <property>velocities/groundspeed-kt</property>
+        <factor>0.1</factor>
+			<step>1</step>
+			<bias>0.5</bias>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>min1</object-name>
+        <property>velocities/gear</property>
+        <factor>0.1</factor>
+			<step>1</step>
+			<bias>0.5</bias>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+</PropertyList>

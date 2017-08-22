@@ -1,0 +1,26 @@
+#######################################################################################################
+
+Arcraft development for Flightgear by Herbert Wagner 2014-2016                            Model: CAT758
+
+This file is licenced under the terms mentioned in this file.
+The 3D-model is CC 3.0 BY NC SA license, everything else is GNU GPLv2+ License.
+
+Aircraft-Name: cat793D
+
+Mining off highway truck, 219 tonns payload, 4020 hp.
+
+Keys:
+
+m - toggle direction
+
+s - autostart
+
+q - horn
+
+The basic model is from http://archive3d.net/?a=download&id=84500d2e for free use and modification.
+
+Have fun!
+
+Copyright by Herbert Wagner 02/2016
+
+#######################################################################################################
