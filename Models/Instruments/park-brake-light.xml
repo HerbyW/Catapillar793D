@@ -18,6 +18,16 @@
  <animation>
    <type>material</type>
    <object-name>Light</object-name>
+   <emission>
+     <factor-prop>controls/switches/gauge-light</factor-prop>
+     <red>   0.969 </red>
+      <green> 0.714 </green>
+      <blue>  0.0 </blue>
+   </emission> 
+ </animation>
+ 
+ <animation>
+   <type>material</type>
    <object-name>cylinder</object-name>
    <emission>
      <factor-prop>controls/switches/gauge-light</factor-prop>
@@ -43,9 +53,9 @@
    <object-name>Light.001</object-name>
    <emission>
      <factor-prop>controls/switches/gauge-light</factor-prop>
-     <red>1</red>
-     <green>1</green>
-     <blue>1</blue>
+     <red>0.969</red>
+     <green>0.714</green>
+     <blue>0</blue>
    </emission> 
  </animation> 
 

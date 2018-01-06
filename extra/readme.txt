@@ -1,6 +1,7 @@
 Please look up the legend.png for detailed description of all control lamps, many thanks to Michat!
 
 The pdf-file gives you all information about the car.
+It is from the official catapillar webpage.
 
 
 Now with 2 tracks for the Catapillar!  

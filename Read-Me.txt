@@ -1,9 +1,12 @@
 #######################################################################################################
 
-Arcraft development for Flightgear by Herbert Wagner 2014-2016                            Model: CAT758
+Arcraft development for Flightgear by Herbert Wagner 2014-2018                            Model: CAT758
 
 This file is licenced under the terms mentioned in this file.
 The 3D-model is CC 3.0 BY NC SA license, everything else is GNU GPLv2+ License.
+
+The pdf-file gives you all information about the car.
+It is from the official catapillar webpage.
 
 Aircraft-Name: cat793D
 
@@ -21,6 +24,6 @@ The basic model is from http://archive3d.net/?a=download&id=84500d2e for free us
 
 Have fun!
 
-Copyright by Herbert Wagner 02/2016
+Copyright by Herbert Wagner 02/2016-2018
 
 #######################################################################################################

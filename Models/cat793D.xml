@@ -7,7 +7,7 @@
 
 <PropertyList>
   
-  <path>cat793D-17.ac</path>
+  <path>cat793D-18.ac</path>
   
   <nasal>
     <load>
@@ -605,7 +605,7 @@
  <path>Aircraft/cat793D/Models/Effects/tyres.xml</path>
  <offsets> 
   <x-m> -2.32</x-m>
-  <y-m>-2.75</y-m>
+  <y-m>-2.79</y-m>
   <z-m> 0.22</z-m>
  </offsets>
 </model>
@@ -617,11 +617,12 @@
   <z-m> 0.22</z-m>
  </offsets>
 </model>
+
 <model> 
  <path>Aircraft/cat793D/Models/Effects/tyres.xml</path>
  <offsets> 
   <x-m> 3.522</x-m>
-  <y-m>-2.46</y-m>
+  <y-m>-2.96</y-m>
   <z-m> 0.22</z-m>
  </offsets>
 </model>
@@ -629,10 +630,28 @@
  <path>Aircraft/cat793D/Models/Effects/tyres.xml</path>
  <offsets> 
   <x-m> 3.522</x-m>
-  <y-m>2.46</y-m>
+  <y-m>2.90</y-m>
   <z-m> 0.22</z-m>
  </offsets>
 </model>
+
+<model> 
+ <path>Aircraft/cat793D/Models/Effects/tyres.xml</path>
+ <offsets> 
+  <x-m> 3.522</x-m>
+  <y-m>-2.10</y-m>
+  <z-m> 0.22</z-m>
+ </offsets>
+</model>
+<model> 
+ <path>Aircraft/cat793D/Models/Effects/tyres.xml</path>
+ <offsets> 
+  <x-m> 3.522</x-m>
+  <y-m>2.04</y-m>
+  <z-m> 0.22</z-m>
+ </offsets>
+</model>
+
 
 <model> 
  <path>Aircraft/cat793D/Models/Effects/engine.xml</path>

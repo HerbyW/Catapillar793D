@@ -46,13 +46,13 @@
 
 	<description>cat793D heavy off highway mining truck</description>
 	<author>Herbert Wagner</author>
-	<status>early production</status>
+	<status>production</status>
 	<rating>
 		<FDM type="int">5</FDM>
-		<systems type="int">4</systems>
-		<cockpit type="int">4</cockpit>
-		<model type="int">4</model>
-		<version  type="string">2.3</version>
+		<systems type="int">5</systems>
+		<cockpit type="int">5</cockpit>
+		<model type="int">5</model>
+		<version  type="string">3.0</version>
 	</rating>
 	
 	<flight-model>jsb</flight-model>
@@ -77,8 +77,8 @@
 			<x-offset-m archive="y" type="double">-2</x-offset-m>
 			<y-offset-m archive="y" type="double">5.26</y-offset-m>
 			<z-offset-m archive="y" type="double">-4.46</z-offset-m>
-			<pitch-offset-deg>-13.0</pitch-offset-deg>
-			<field-of-view>100.0</field-of-view>
+			<pitch-offset-deg>-15.0</pitch-offset-deg>
+			<default-field-of-view-deg type="double"> 100 </default-field-of-view-deg>
 		</config>
 	</view>
 
@@ -125,7 +125,7 @@
 			<y-offset-m archive="y" type="double">13.7</y-offset-m>
 			<z-offset-m archive="y" type="double">-19.7</z-offset-m>
 			<pitch-offset-deg>-10.0</pitch-offset-deg>
-			<field-of-view>89</field-of-view>
+			<default-field-of-view-deg type="double"> 90 </default-field-of-view-deg>
 		</config>
 	</view>
 
@@ -158,7 +158,7 @@
     <desc>Reset</desc>
   </key>
   <text>
-    Welcome to the heavy off highway mining truck CAT793D, version 2.3
+    Welcome to the heavy off highway mining truck CAT793D, version 3.0
     
     Please look up the extra-folder, you will get some helpful informations there.
     The legend.png is a detailed description of all control lamps, many thanks to Michat!
