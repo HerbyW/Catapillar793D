@@ -1,6 +1,7 @@
-#######################################################################################################
+# Catapillar793D
+for Flightgear Flightsimulator by Herbert Wagner
 
-Arcraft development for Flightgear by Herbert Wagner 2014-2018                            Model: CAT758
+Mining Vehicle with scenery of 2 mines
 
 This file is licenced under the terms mentioned in this file.
 The 3D-model is CC 3.0 BY NC SA license, everything else is GNU GPLv2+ License.
@@ -27,6 +28,8 @@ Have fun!
 Copyright by Herbert Wagner 02/2016-2018
 
 
-Instalation: Unzip and copy into the aircraft folder.
+LICENSE: This aircraft is released under the GNU GPL v2 License, see COPYING file.
 
-#######################################################################################################
+Installation: Unzip and copy into the aircraft folder.
+
+See aircraft help for detailed instructions.
